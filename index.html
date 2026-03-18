@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* MANTIDO EXATAMENTE DA SUA V1 */
         :root { --neon-green: #00FF41; --dark-bg: #050505; --gray-card: #121212; }
         body { background-color: var(--dark-bg); color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .neon-text { color: var(--neon-green); text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
@@ -19,7 +18,6 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; cursor: pointer;}
 
-        /* --- INSERÇÃO DE IMAGENS DE FUNDO --- */
         #home { 
             background: linear-gradient(rgba(5,5,5,0.85), rgba(5,5,5,0.85)), url('hero-mlk-neon.jpeg'); 
             background-size: cover; background-position: center; 
@@ -40,6 +38,7 @@
             <a href="#home" class="hover:text-white transition">Início</a>
             <a href="#servicos" class="hover:text-white transition">Serviços</a>
             <a href="#sobre" class="hover:text-white transition">Sobre</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
             <a href="#depoimentos" class="hover:text-white transition">Avaliações</a>
             <a href="#contato" class="hover:text-white transition">Contato</a>
         </div>
@@ -50,7 +49,7 @@
         <div class="reveal active">
             <span class="text-gray-500 font-mono tracking-widest uppercase text-xs">Fullstack Hardware & Software</span>
             <h2 class="text-5xl md:text-8xl font-black mt-4 leading-none">Sua tecnologia. <br> <span class="neon-text italic underline">Resolvida.</span></h2>
-            <p class="text-gray-400 mt-8 max-w-2xl mx-auto text-lg">Do upgrade do seu PC Gamer à criação da sua Landing Page. Performance, agilidade e o melhor custo-benefício do Paraná.</p>
+            <p class="text-gray-400 mt-8 max-w-2xl mx-auto text-lg">Presença digital, infraestrutura e alta performance. O suporte que o seu negócio precisa no centro de Curitiba.</p>
             <div class="mt-10 flex justify-center">
                 <a href="#servicos" class="btn-neon px-10 py-5 rounded-full uppercase text-sm tracking-widest inline-block">Ver Serviços</a>
             </div>
@@ -59,18 +58,30 @@
 
     <section id="servicos" class="py-24 px-6 max-w-7xl mx-auto">
         <h3 class="text-center text-3xl font-black mb-16 uppercase italic tracking-tighter">O que a gente <span class="neon-text">faz</span></h3>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
-                <div><i class="fas fa-microchip text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Manutenção & Hardware</h4><p class="text-gray-400 text-sm leading-relaxed">Montagem de PCs, limpeza preventiva, troca de pasta térmica, upgrades de memória e diagnóstico de problemas físicos.</p></div>
-                <button onclick="wpp('Hardware')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Solicitar Hardware</button>
-            </div>
-            <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal border-neon-green/40 flex flex-col justify-between">
-                <div><i class="fas fa-code text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Desenvolvimento Web</h4><p class="text-gray-400 text-sm leading-relaxed">Landing Pages de alta conversão, portfólios profissionais e sites institucionais responsivos e ultra velozes.</p></div>
-                <button onclick="wpp('Site')" class="mt-10 btn-neon py-3 rounded-xl font-bold text-xs uppercase">Criar meu Site</button>
+                <div><i class="fab fa-google text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Google Meu Negócio</h4><p class="text-gray-400 text-sm leading-relaxed">Coloque sua empresa no mapa! Configuração completa, fotos, integração com WhatsApp e SEO local para dominar as buscas em Curitiba.</p></div>
+                <button onclick="wpp('Google')" class="mt-10 btn-neon py-3 rounded-xl font-bold text-xs uppercase">Aparecer no Google</button>
             </div>
             <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
-                <div><i class="fas fa-terminal text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Scripts & Automação</h4><p class="text-gray-400 text-sm leading-relaxed">Automação de tarefas repetitivas, extração de dados e ferramentas personalizadas para otimizar seu dia a dia.</p></div>
-                <button onclick="wpp('Script')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Orçar Automação</button>
+                <div><i class="fas fa-truck-fast text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Visita Técnica & Upgrade</h4><p class="text-gray-400 text-sm leading-relaxed">Diagnóstico presencial, montagem de PCs e análise de upgrades. Atendimento domiciliar ou empresarial por taxa fixa de <strong>R$ 50,00</strong>.</p></div>
+                <button onclick="wpp('Visita')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Agendar Visita</button>
+            </div>
+            <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
+                <div><i class="fas fa-code text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Desenvolvimento Web</h4><p class="text-gray-400 text-sm leading-relaxed">Landing Pages de alta conversão e sites institucionais responsivos para transformar visitantes em clientes reais.</p></div>
+                <button onclick="wpp('Site')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Criar meu Site</button>
+            </div>
+            <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
+                <div><i class="fas fa-network-wired text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Suporte de Infraestrutura</h4><p class="text-gray-400 text-sm leading-relaxed">Configuração de redes Wi-Fi, impressoras fiscais e manutenção de PDV. Estabilidade para o seu comércio não parar.</p></div>
+                <button onclick="wpp('Infra')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Solicitar Suporte</button>
+            </div>
+            <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
+                <div><i class="fas fa-terminal text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Scripts & Automação</h4><p class="text-gray-400 text-sm leading-relaxed">Elimine tarefas repetitivas com scripts personalizados. Ganhe tempo e produtividade no seu dia a dia.</p></div>
+                <button onclick="wpp('Script')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Orçar Script</button>
+            </div>
+            <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
+                <div><i class="fas fa-bullhorn text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Presença Digital</h4><p class="text-gray-400 text-sm leading-relaxed">Gestão estratégica de Instagram e TikTok através de parceiros especialistas sob nossa consultoria.</p></div>
+                <button onclick="wpp('Geral')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Saber Mais</button>
             </div>
         </div>
     </section>
@@ -85,8 +96,26 @@
             <div class="w-full md:w-2/3 text-center md:text-left">
                 <span class="neon-text font-mono uppercase text-xs tracking-widest">A História por trás da MLK</span>
                 <h3 class="text-4xl font-black mt-3 mb-6 uppercase italic tracking-tighter">Guilherme, o <span class="text-white">Especialista</span></h3>
-                <p class="text-gray-400 leading-relaxed mb-4">Montei meu primeiro computador aos 12 anos. Desde então, hardware e software são meu campo de jogo.</p>
-                <p class="text-gray-400 leading-relaxed">Hoje, como estudante de ADS, uno prática e teoria para resolver sua tecnologia de forma ágil e eficiente.</p>
+                <p class="text-gray-400 leading-relaxed mb-4">Montei meu primeiro computador aos 12 anos. Hoje, como estudante de Sistemas de Informação, transformo paixão em soluções profissionais.</p>
+                <p class="text-gray-400 leading-relaxed">A MLK Tech nasceu para desmistificar a tecnologia e entregar resultados reais para pequenos e médios empreendedores.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6 max-w-4xl mx-auto reveal">
+        <h3 class="text-center text-3xl font-black mb-16 uppercase italic tracking-tighter">Dúvidas <span class="neon-text">Frequentes</span></h3>
+        <div class="space-y-6">
+            <div class="neon-border bg-zinc-900/30 p-6 rounded-2xl">
+                <h4 class="font-bold text-neon-green mb-2 uppercase text-sm tracking-widest">Como funciona a taxa de visita técnica?</h4>
+                <p class="text-gray-400 text-sm">A taxa de R$ 50,00 cobre o deslocamento e o diagnóstico inicial. Caso o serviço seja aprovado, esse valor é abatido do orçamento final do serviço.</p>
+            </div>
+            <div class="neon-border bg-zinc-900/30 p-6 rounded-2xl">
+                <h4 class="font-bold text-neon-green mb-2 uppercase text-sm tracking-widest">Por que colocar minha empresa no Google Maps?</h4>
+                <p class="text-gray-400 text-sm">Empresas com perfil completo no Google recebem 7x mais cliques. É a forma mais rápida de ser encontrado por clientes no Centro e bairros de Curitiba.</p>
+            </div>
+            <div class="neon-border bg-zinc-900/30 p-6 rounded-2xl">
+                <h4 class="font-bold text-neon-green mb-2 uppercase text-sm tracking-widest">Vocês atendem empresas fora de Curitiba?</h4>
+                <p class="text-gray-400 text-sm">Atendemos presencialmente toda Curitiba e Região Metropolitana. Para serviços de Desenvolvimento Web e Scripts, o atendimento é nacional (remoto).</p>
             </div>
         </div>
     </section>
@@ -114,27 +143,26 @@
     </footer>
 
     <script>
-        const WPP_NUM = "5541984198727"; // Coloque seu número aqui
+        const WPP_NUM = "5541984198727";
 
         function wpp(tipo) {
             let msg = "";
-            if(tipo === 'Hardware') msg = "Olá Guilherme! Preciso de uma manutenção ou upgrade no meu PC. Pode me ajudar?";
+            if(tipo === 'Google') msg = "Olá Guilherme! Vi seu site e quero colocar minha empresa no Google Maps. Como funciona?";
+            else if(tipo === 'Visita') msg = "Olá Guilherme! Gostaria de agendar uma visita técnica de R$ 50 para um diagnóstico. Qual sua disponibilidade?";
+            else if(tipo === 'Infra') msg = "Olá! Preciso de suporte técnico para a infraestrutura da minha empresa (Rede/Impressoras). Pode me ajudar?";
             else if(tipo === 'Site') msg = "Olá Guilherme! Quero criar um site profissional com a MLK Tech. Como começamos?";
-            else if(tipo === 'Script') msg = "Olá Guilherme! Tenho uma tarefa repetitiva que precisa de automação. Gostaria de um orçamento de script.";
-            else msg = "Olá Guilherme! Gostaria de conhecer melhor os serviços da MLK Soluções Tecnológicas.";
+            else if(tipo === 'Script') msg = "Olá Guilherme! Tenho uma tarefa repetitiva que precisa de automação. Gostaria de um orçamento.";
+            else msg = "Olá Guilherme! Gostaria de conhecer melhor os serviços da MLK Tech.";
 
-            // Sintaxe de concatenação robusta e testada
             const finalUrl = "https://wa.me/" + WPP_NUM + "?text=" + encodeURIComponent(msg);
             window.open(finalUrl, "_blank");
         }
 
-        // Reveal (Mantido da Sua V1)
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.reveal').forEach(r => {
                 if (r.getBoundingClientRect().top < window.innerHeight - 50) r.classList.add('active');
             });
         });
-        // Trigger inicial para garantir carregamento
         document.addEventListener('DOMContentLoaded', () => { document.querySelectorAll('.reveal').forEach(r => r.classList.add('active')); });
     </script>
 </body>
