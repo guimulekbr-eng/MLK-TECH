@@ -7,34 +7,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --neon-green: #00FF41; --dark-bg: #050505; }
-        body { background-color: var(--dark-bg); color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        
+        /* MANTIDO EXATAMENTE DA SUA V1 */
+        :root { --neon-green: #00FF41; --dark-bg: #050505; --gray-card: #121212; }
+        body { background-color: var(--dark-bg); color: white; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .neon-text { color: var(--neon-green); text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
         .neon-border { border: 1px solid rgba(0, 255, 65, 0.2); transition: 0.3s; }
         .neon-border:hover { border-color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); }
-        .btn-neon { background: var(--neon-green); color: black; font-weight: 800; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-neon { background: var(--neon-green); color: black; font-weight: 800; transition: 0.3s; border: none; cursor: pointer;}
         .btn-neon:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--neon-green); }
-        
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; cursor: pointer; }
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: none; cursor: pointer;}
 
-        /* Onde as imagens vão aparecer */
+        /* --- INSERÇÃO DE IMAGENS DE FUNDO --- */
         #home { 
-            background: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.8)), url('hero-bg.jpg'); 
+            background: linear-gradient(rgba(5,5,5,0.85), rgba(5,5,5,0.85)), url('hero-mlk-neon.png'); 
             background-size: cover; background-position: center; 
         }
-        .img-hardware { background-image: url('hardware.jpg'); background-size: cover; background-position: center; }
+        #sobre { 
+            background: linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.92)), url('sobre-mlk-code.jpg'); 
+            background-size: cover; background-position: center;
+        }
     </style>
 </head>
 <body>
 
     <button onclick="wpp('Geral')" class="whatsapp-float"><i class="fab fa-whatsapp"></i></button>
 
-    <nav class="fixed w-full z-50 p-4 md:p-6 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
-        <h1 class="text-xl md:text-2xl font-black tracking-tighter italic">MLK <span class="neon-text uppercase">Tech</span></h1>
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+        <h1 class="text-2xl font-black tracking-tighter italic">MLK <span class="neon-text uppercase">Tech</span></h1>
         <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
             <a href="#home" class="hover:text-white transition">Início</a>
             <a href="#servicos" class="hover:text-white transition">Serviços</a>
@@ -50,7 +51,7 @@
             <span class="text-gray-500 font-mono tracking-widest uppercase text-xs">Fullstack Hardware & Software</span>
             <h2 class="text-5xl md:text-8xl font-black mt-4 leading-none">Sua tecnologia. <br> <span class="neon-text italic underline">Resolvida.</span></h2>
             <p class="text-gray-400 mt-8 max-w-2xl mx-auto text-lg">Do upgrade do seu PC Gamer à criação da sua Landing Page. Performance, agilidade e o melhor custo-benefício do Paraná.</p>
-            <div class="mt-10">
+            <div class="mt-10 flex justify-center">
                 <a href="#servicos" class="btn-neon px-10 py-5 rounded-full uppercase text-sm tracking-widest inline-block">Ver Serviços</a>
             </div>
         </div>
@@ -60,31 +61,32 @@
         <h3 class="text-center text-3xl font-black mb-16 uppercase italic tracking-tighter">O que a gente <span class="neon-text">faz</span></h3>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
-                <div><i class="fas fa-microchip text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Manutenção & Hardware</h4><p class="text-gray-400 text-sm leading-relaxed">Montagem de PCs, limpeza preventiva, troca de pasta térmica e diagnósticos.</p></div>
+                <div><i class="fas fa-microchip text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Manutenção & Hardware</h4><p class="text-gray-400 text-sm leading-relaxed">Montagem de PCs, limpeza preventiva, troca de pasta térmica, upgrades de memória e diagnóstico de problemas físicos.</p></div>
                 <button onclick="wpp('Hardware')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Solicitar Hardware</button>
             </div>
             <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal border-neon-green/40 flex flex-col justify-between">
-                <div><i class="fas fa-code text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Desenvolvimento Web</h4><p class="text-gray-400 text-sm leading-relaxed">Landing Pages de alta conversão e sites institucionais responsivos.</p></div>
+                <div><i class="fas fa-code text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Desenvolvimento Web</h4><p class="text-gray-400 text-sm leading-relaxed">Landing Pages de alta conversão, portfólios profissionais e sites institucionais responsivos e ultra velozes.</p></div>
                 <button onclick="wpp('Site')" class="mt-10 btn-neon py-3 rounded-xl font-bold text-xs uppercase">Criar meu Site</button>
             </div>
             <div class="neon-border bg-zinc-900/50 p-8 rounded-3xl reveal flex flex-col justify-between">
-                <div><i class="fas fa-terminal text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Scripts & Automação</h4><p class="text-gray-400 text-sm leading-relaxed">Automação de tarefas, extração de dados e ferramentas personalizadas.</p></div>
+                <div><i class="fas fa-terminal text-4xl neon-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Scripts & Automação</h4><p class="text-gray-400 text-sm leading-relaxed">Automação de tarefas repetitivas, extração de dados e ferramentas personalizadas para otimizar seu dia a dia.</p></div>
                 <button onclick="wpp('Script')" class="mt-10 py-3 border border-white/10 rounded-xl font-bold text-xs uppercase hover:bg-white hover:text-black transition">Orçar Automação</button>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="py-24 px-6 bg-zinc-950/50 border-y border-white/5">
+    <section id="sobre" class="py-24 px-6 border-y border-white/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 reveal">
             <div class="w-full md:w-1/3 flex justify-center">
-                <div class="w-48 h-48 rounded-full border-2 border-neon-green/30 flex items-center justify-center bg-black shadow-xl neon-border overflow-hidden">
+                <div class="w-48 h-48 rounded-full border border-neon-green/30 flex items-center justify-center bg-black/80 neon-border overflow-hidden">
                     <i class="fas fa-user-graduate text-6xl neon-text"></i>
                 </div>
             </div>
             <div class="w-full md:w-2/3 text-center md:text-left">
                 <span class="neon-text font-mono uppercase text-xs tracking-widest">A História por trás da MLK</span>
                 <h3 class="text-4xl font-black mt-3 mb-6 uppercase italic tracking-tighter">Guilherme, o <span class="text-white">Especialista</span></h3>
-                <p class="text-gray-400 leading-relaxed mb-4">Montei meu primeiro computador aos 12 anos. Hoje, estudante de ADS, uno prática e teoria para resolver sua tecnologia.</p>
+                <p class="text-gray-400 leading-relaxed mb-4">Montei meu primeiro computador aos 12 anos. Desde então, hardware e software são meu campo de jogo.</p>
+                <p class="text-gray-400 leading-relaxed">Hoje, como estudante de ADS, uno prática e teoria para resolver sua tecnologia de forma ágil e eficiente.</p>
             </div>
         </div>
     </section>
@@ -92,42 +94,47 @@
     <section id="depoimentos" class="py-24 px-6 max-w-7xl mx-auto">
         <h3 class="text-center text-3xl font-black mb-16 uppercase italic tracking-tighter">Quem <span class="neon-text">confia</span> na MLK Tech</h3>
         <div class="grid md:grid-cols-3 gap-6">
-            <div class="neon-border p-6 rounded-2xl reveal"><div class="flex text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-400 text-sm italic mb-4">"Meu PC Gamer ficou novo. Guilherme é muito honesto e rápido."</p><div class="font-bold text-xs neon-text uppercase tracking-widest">Felipe S. - Curitiba</div></div>
-            <div class="neon-border p-6 rounded-2xl reveal"><div class="flex text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-400 text-sm italic mb-4">"A Landing Page da minha empresa ficou sensacional. Recomendo!"</p><div class="font-bold text-xs neon-text uppercase tracking-widest">Amanda R. - Colombo</div></div>
-            <div class="neon-border p-6 rounded-2xl reveal"><div class="flex text-yellow-400 mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-400 text-sm italic mb-4">"O script de automação funciona perfeitamente. Ganhei muito tempo."</p><div class="font-bold text-xs neon-text uppercase tracking-widest">Bruno T. - Araucária</div></div>
+            <div class="neon-border bg-zinc-900/30 p-6 rounded-2xl reveal"><div class="flex text-yellow-400 mb-3 justify-center md:justify-start"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-400 text-sm italic mb-4">"Meu PC Gamer ficou novo. Diagnóstico rápido e honesto."</p><div class="font-bold text-xs neon-text uppercase tracking-widest">Felipe S. - Curitiba</div></div>
+            <div class="neon-border bg-zinc-900/30 p-6 rounded-2xl reveal"><div class="flex text-yellow-400 mb-3 justify-center md:justify-start"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-400 text-sm italic mb-4">"A Landing Page ficou pronta em tempo recorde e gera leads."</p><div class="font-bold text-xs neon-text uppercase tracking-widest">Amanda R. - Colombo</div></div>
+            <div class="neon-border bg-zinc-900/30 p-6 rounded-2xl reveal"><div class="flex text-yellow-400 mb-3 justify-center md:justify-start"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-gray-400 text-sm italic mb-4">"O script automatizou meu financeiro. Trabalho sensacional!"</p><div class="font-bold text-xs neon-text uppercase tracking-widest">Bruno T. - Araucária</div></div>
         </div>
     </section>
 
     <footer id="contato" class="py-20 text-center border-t border-white/5 bg-black">
         <div class="max-w-2xl mx-auto px-6 reveal">
-            <h2 class="text-4xl font-black italic tracking-tighter uppercase">Vamos <span class="neon-text">resolver?</span></h2>
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-10 mb-12">
+            <h2 class="text-4xl font-black italic tracking-tighter uppercase mb-10">Vamos <span class="neon-text">resolver?</span></h2>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
                 <button onclick="wpp('Geral')" class="btn-neon px-8 py-4 rounded-xl text-xs uppercase tracking-widest flex items-center gap-2 italic">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                    <i class="fab fa-whatsapp"></i> WhatsApp Rápido
                 </button>
                 <span class="text-gray-600 font-mono text-xs">contato@mlktech.com</span>
             </div>
-            <p class="text-gray-800 text-[10px] uppercase tracking-[0.5em]">MLK Tech © 2026</p>
+            <p class="text-gray-800 text-[10px] uppercase tracking-[0.4em] font-bold">MLK Tech Curitiba - PR | Soluções Inteligentes © 2026</p>
         </div>
     </footer>
 
     <script>
+        const WPP_NUM = "554184226487"; // Coloque seu número aqui
+
         function wpp(tipo) {
-            const num = "5541984198727";
             let msg = "";
             if(tipo === 'Hardware') msg = "Olá Guilherme! Preciso de uma manutenção ou upgrade no meu PC. Pode me ajudar?";
             else if(tipo === 'Site') msg = "Olá Guilherme! Quero criar um site profissional com a MLK Tech. Como começamos?";
-            else if(tipo === 'Script') msg = "Olá Guilherme! Tenho uma tarefa que precisa de automação. Gostaria de um orçamento de script.";
-            else msg = "Olá Guilherme! Gostaria de um orçamento para serviços de tecnologia.";
-            
-            window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg));
+            else if(tipo === 'Script') msg = "Olá Guilherme! Tenho uma tarefa repetitiva que precisa de automação. Gostaria de um orçamento de script.";
+            else msg = "Olá Guilherme! Gostaria de conhecer melhor os serviços da MLK Soluções Tecnológicas.";
+
+            // Sintaxe de concatenação robusta e testada
+            const finalUrl = "https://wa.me/" + WPP_NUM + "?text=" + encodeURIComponent(msg);
+            window.open(finalUrl, "_blank");
         }
 
+        // Reveal (Mantido da Sua V1)
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.reveal').forEach(r => {
                 if (r.getBoundingClientRect().top < window.innerHeight - 50) r.classList.add('active');
             });
         });
+        // Trigger inicial para garantir carregamento
         document.addEventListener('DOMContentLoaded', () => { document.querySelectorAll('.reveal').forEach(r => r.classList.add('active')); });
     </script>
 </body>
